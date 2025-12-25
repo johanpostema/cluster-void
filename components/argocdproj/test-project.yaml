@@ -3,6 +3,4 @@ kind: AppProject
 metadata:
   name: test-project
   namespace: argocd
-spec:
-  sourceNamespaces:
-    - '*'
+spec: {}

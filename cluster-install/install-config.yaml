@@ -1,0 +1,26 @@
+apiVersion: v1
+baseDomain: uxn.nl
+compute:
+  - name: worker
+    replicas: 0
+controlPlane:
+  name: master
+  replicas: 1
+metadata:
+  name: void
+networking:
+  clusterNetwork:
+    - cidr: 10.128.0.0/14
+      hostPrefix: 23
+  machineNetwork:
+    - cidr: 10.0.0.0/16
+  networkType: OVNKubernetes
+  serviceNetwork:
+    - 172.30.0.0/16
+platform:
+  none: {}
+bootstrapInPlace:
+  installationDisk: /dev/nvme0n1
+pullSecret: '{"auths": {"fake": {"auth": "aWQ6cGFzcwo="}}}'
+sshKey: |
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGCTAcrFxKjPwk1nIhRKjfwBCCga44b4SL9KvlZsk3Z9 johan@domain

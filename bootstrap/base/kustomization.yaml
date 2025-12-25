@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - argocd-ns.yaml
   - argocd-operator.yaml
-  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  - argocd-install.yaml
+# - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 #- https://raw.githubusercontent.com/argoproj-labs/applicationset/stable/manifests/install.yaml

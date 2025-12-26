@@ -9,3 +9,4 @@ spec:
   source: community-operators
   sourceNamespace: openshift-marketplace
   installPlanApproval: Automatic
+  startingCSV: cert-manager.v1.16.5

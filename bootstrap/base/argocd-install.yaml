@@ -6,12 +6,14 @@ metadata:
 spec:
   rbac:
     defaultPolicy: "role:admin"
+  applicationSet: {}
+
   sourceNamespaces:
     - '*'
   server:
+    extraArgs: []
     route:
       enabled: true
-  applicationSet:
-    enabled: true
-  dex:
-    openShiftOAuth: true
+
+  controller:
+    extraArgs: []

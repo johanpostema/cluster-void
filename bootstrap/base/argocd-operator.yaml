@@ -15,3 +15,8 @@ spec:
   source: community-operators
   sourceNamespace: openshift-marketplace
   installPlanApproval: Automatic
+  # ZIE: https://github.com/argoproj/argo-cd/issues/5886
+  config:
+    env:
+    - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+      value: argocd

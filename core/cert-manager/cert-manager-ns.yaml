@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cert-mananger-operator
+  name: cert-manager-operator
 spec: {}
 status: {}
 ---

@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: https://github.com/johnapostema/cluster-void
+      repoURL: https://github.com/johanpostema/cluster-void
       revision: main
       directories:
       - path: core/*

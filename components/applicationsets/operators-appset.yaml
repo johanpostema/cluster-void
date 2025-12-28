@@ -1,0 +1,37 @@
+# voor operators andere syncopties om te voorkomen dat ArgoCD zaken verwijderd/pruned
+# die door operators wordt aangemaakt
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/johanpostema/cluster-void
+      revision: main
+      directories:
+      - path: operators/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+        retry:
+          limit: 15
+          backoff:
+            duration: 15s
+            factor: 2
+            maxDuration: 5m
+      source:
+        repoURL: https://github.com/johanpostema/cluster-void
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc

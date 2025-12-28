@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - cert-manager-ns.yaml
   - cert-manager-operator.yaml
-  - cert-mananger-clusterissuer.yaml
+#  - cert-mananger-clusterissuer.yaml
